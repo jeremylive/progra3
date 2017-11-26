@@ -30,12 +30,9 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="171" pref="171" max="-2" attributes="0"/>
-                              <Component id="jTextField6" min="-2" pref="166" max="-2" attributes="0"/>
+                              <Component id="correoAficionado" min="-2" pref="166" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="251" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
@@ -45,12 +42,12 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                                  <Component id="jTextField3" max="32767" attributes="0"/>
+                                  <Component id="indicadorFoto" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="jTextField5" min="-2" pref="166" max="-2" attributes="0"/>
+                                  <Component id="indicadorCorreo" min="-2" pref="166" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -75,21 +72,29 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField1" alignment="0" min="-2" pref="166" max="-2" attributes="0"/>
-                              <Component id="jTextField7" alignment="0" max="32767" attributes="0"/>
+                              <Component id="contraseñaAficionado" alignment="0" max="32767" attributes="0"/>
+                              <Component id="codAficionado" alignment="0" min="-2" pref="166" max="-2" attributes="0"/>
+                              <Component id="fotoAficionado" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
               </Group>
               <EmptySpace pref="30" max="32767" attributes="0"/>
-              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField4" min="-2" pref="145" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="codAficionadoEliminar" min="-2" pref="145" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="salir" min="-2" pref="72" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -100,8 +105,8 @@
               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="codAficionado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="codAficionadoEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -110,35 +115,38 @@
                   <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="contraseñaAficionado" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField7" min="-2" max="-2" attributes="0"/>
+                  <Component id="fotoAficionado" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField6" min="-2" max="-2" attributes="0"/>
+                  <Component id="correoAficionado" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField3" min="-2" max="-2" attributes="0"/>
+                  <Component id="indicadorFoto" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="indicadorCorreo" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField5" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="25" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="salir" min="-2" pref="51" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -152,13 +160,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="codAficionado">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="contrase&#xf1;aAficionado">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="indicadorFoto">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="codAficionadoEliminar">
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
@@ -211,16 +219,24 @@
         <Property name="text" type="java.lang.String" value="indicador de despliegue de correo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5">
+    <Component class="javax.swing.JTextField" name="indicadorCorreo">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
         <Property name="text" type="java.lang.String" value="correo electr&#xf3;nico"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField6">
+    <Component class="javax.swing.JTextField" name="correoAficionado">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField7">
+    <Component class="javax.swing.JTextField" name="fotoAficionado">
+    </Component>
+    <Component class="javax.swing.JButton" name="salir">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="SALIR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salirActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
