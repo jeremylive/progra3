@@ -22,7 +22,7 @@ public class Controlador
     {
         this.cMongo = mongo;
         this.tablaResumen = cMongo.getDb().getCollection("resumen");
-        this.arreglo = new ArrayList<Integer>();
+        this.arreglo = new ArrayList<>();
     }
     
     //gets and sets
@@ -45,6 +45,7 @@ public class Controlador
         if(arreglo.contains(numero_partido)){
             return 1;
         }
+        arreglo.add(numero_partido);
         //Validat que este en ORACLE
         
         //creo tupla
@@ -63,7 +64,7 @@ public class Controlador
     
     public int updateResumen(int numero_partido, String txtResumen, String video1, String video2)
     {
-        //No debe de existir el resumen en el arreglo de resumen
+        //Debe de existir el resumen en el arreglo de resumen
         if(!(arreglo.contains(numero_partido))){
             return 1;
         }
@@ -79,9 +80,9 @@ public class Controlador
         return 0;
     }    
     
-    public void readResumen()
+    public void readResumen(int numero_partido)
     {
-        DBCursor cursor =  tablaResumen.find(new BasicDBObject("numero_partido",4));
+        DBCursor cursor =  tablaResumen.find(new BasicDBObject("numero_partido",numero_partido));
         System.out.println("encuentro tabla");
         while(cursor.hasNext())
         {
