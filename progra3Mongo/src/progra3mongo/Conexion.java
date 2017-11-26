@@ -88,7 +88,7 @@ public class Conexion
             
             Class .forName("oracle.jdbc.OracleDriver");
             String BaseDeDatos = "jdbc:oracle:thin:@//172.19.32.101:1521/grupo07.basedatos";
-            setConexion(DriverManager.getConnection(BaseDeDatos,getName(),getPass()));
+            setConexion(DriverManager.getConnection(BaseDeDatos,"JLIVE","JLIVE"));
             
             if(getConexion() != null)
             {
