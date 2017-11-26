@@ -165,7 +165,7 @@ public class interfazCrudResumen extends javax.swing.JFrame
 
         
         //Modifico un resumen
-        
+        control.updateResumen(Integer.parseInt(numPartido.getText()), txtResumen.getText(), video1.getText(), video2.getText());
         
 
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -174,8 +174,7 @@ public class interfazCrudResumen extends javax.swing.JFrame
 
 
         //Elimino un resumen
-        
-        //numPartidoEliminar.getText()
+        control.deleteResumen(Integer.parseInt(numPartidoEliminar.getText()));
     }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
