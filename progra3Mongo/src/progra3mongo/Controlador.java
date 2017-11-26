@@ -30,8 +30,9 @@ public class Controlador
     public void createResumen(int numero_partido, String codEq1, String codEq2, 
                                 String txtResumen, String video1, String video2)
     {
+        System.out.println("entra a la funcion create");
         DBCollection tabla = cMongo.getDb().getCollection("participa");
-        
+        System.out.println("tengo la tabla");
         BasicDBObject document = new BasicDBObject();
         document.put("numero_partido",numero_partido);
         document.put("codigo_equi1","'"+codEq1+"'");
@@ -41,11 +42,11 @@ public class Controlador
         document.put("video2","'"+video2+"'");
         tabla.insert(document);
         
-        DBCursor cursor =  tabla.find(new BasicDBObject("nombre","jeremy"));
-        
+        DBCursor cursor =  tabla.find(new BasicDBObject("numero_partido",11));
+        System.out.println("encuentro tabla");
         while(cursor.hasNext())
         {
-            JOptionPane.showMessageDialog(null,"nombre: "+cursor.next());
+            System.out.println("nombre: "+cursor.next());
         }
     }
     
