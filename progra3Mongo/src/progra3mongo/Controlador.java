@@ -12,6 +12,13 @@ public class Controlador
         
     }
     
-    //
+    //gets and sets
+    
+    
+    //funciones
+    
+    
+    
+    
     
 }
