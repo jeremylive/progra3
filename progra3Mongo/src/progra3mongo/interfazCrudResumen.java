@@ -1,20 +1,23 @@
 package progra3mongo;
 
+import java.sql.*;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author live
  */
-public class interfazCrudResumen extends javax.swing.JFrame 
-{
+public class interfazCrudResumen extends javax.swing.JFrame {
+
     //Variables globales
     Controlador control;
-    
-    public interfazCrudResumen(Controlador control1) 
-    {
-        
+
+    public interfazCrudResumen(Controlador control1) {
+
         this.control = control1;
         initComponents();
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -143,35 +146,67 @@ public class interfazCrudResumen extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Create resumen
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        
         //Validar que sea int o strings
-        
-        
-        //Valido que el numero de partido este en el BD de oracle
+        int numeroPartido;
+        try {
+            numeroPartido = Integer.parseInt(numPartido.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "El numero de partido debe ser entero");
+            return;
+        }
+
+        //Valido que el numero de partido este en el BD de oracle y obtengo los equipos
         String eq1 = "";
         String eq2 = "";
+        boolean valido = false;
+        try {
+            //Hago conexion
+            Connection oracle = Conexion.getConexion();
+            Statement statement = oracle.createStatement();
+            //Realiza el query
+            String query = "SELECT * FROM PARTIDO_PARTICIPA";
+            ResultSet output = statement.executeQuery(query);
+            //Obtengo los metadatos
+            ResultSetMetaData metaDatos = output.getMetaData();
+            int index = metaDatos.getColumnCount();
+            //Comparo el numero de partido con los que estan en Oracle
+            while (output.next()) {
+                if (output.getInt(1) == numeroPartido) {
+                    valido = true;
+                    if (output.getInt(3) == 1) {
+                        eq1 = output.getString(2);
+                    } else {
+                        eq2 = output.getString(2);
+                    }
+                }
+            }
+            
+            if(!valido) {
+                JOptionPane.showMessageDialog(null, "No puede registrar el resumen porque el partido aún no está en el sistema");
+                return;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al obtener los partidos en ORACLE");
+            return;
+        }
+
         //Creo un resumen
-        control.createResumen(Integer.parseInt(numPartido.getText()), eq1, eq2, txtResumen.getText(), video1.getText(), video2.getText());
-        
-        
-        
-        
-        
+        control.createResumen(numeroPartido, eq1, eq2, txtResumen.getText(), video1.getText(), video2.getText());
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-        
         //Modifico un resumen
         control.updateResumen(Integer.parseInt(numPartido.getText()), txtResumen.getText(), video1.getText(), video2.getText());
-        
+
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
 
         //Elimino un resumen
         control.deleteResumen(Integer.parseInt(numPartidoEliminar.getText()));
