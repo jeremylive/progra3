@@ -287,7 +287,7 @@ public class interfazReadResumenComentario extends javax.swing.JFrame
     private void CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarActionPerformed
 
 
-        //
+        //Logica, obtengo los datos necesarios..........
         //control.get();
         //cargarReadResumenComent(pnumPar, peq1, peq2, pcoment, pnumComent, pAfi, pfecha, phora);
         

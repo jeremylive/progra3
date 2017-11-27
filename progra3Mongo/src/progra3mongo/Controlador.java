@@ -35,6 +35,65 @@ public class Controlador {
     }
 
     //funciones
+    
+    
+    //CRUD AFICIONADO
+    public void crearAficionado(String codAficionado, String contraseñaAficionado, 
+                String fotoAficionado, String correoAficionado, boolean indicadorFoto,
+                boolean indicadorCorreo)
+    {
+        //Validaciones 
+        if(indicadorFoto==true)
+        {
+            
+        }
+        
+        //
+        if(indicadorCorreo==true)
+        {
+            
+        }
+        
+        //
+        
+        
+        
+    }
+    
+    public void updateAficionado(String codAficionado, String contraseñaAficionado, 
+                String fotoAficionado, String correoAficionado, String indicadorFoto,
+                String indicadorCorreo)
+    {
+        
+    }
+    
+    
+    public void eliminarAficionado(String codAficionadoEliminar)
+    {
+        
+    }
+    
+    //CRUD COMENTARIO
+    public void crearComentario(int cont, String txtComentario, String codigoAficionado, 
+            String fechaComentario, String horaComentario, String comentPadre)
+    {
+        
+    }
+    
+    
+    public void updateComentario(String txtComentario, String codigoAficionado, 
+            String fechaComentario, String horaComentario, String comentPadre)
+    {
+        
+    }
+    
+    
+    public void eliminarComentario(int numComentarioEliminar)
+    {
+        
+    }
+    
+    
     //CRUD RESUMEN
     public int createResumen(int numero_partido, String codEq1, String codEq2,
             String txtResumen, String video1, String video2) {
