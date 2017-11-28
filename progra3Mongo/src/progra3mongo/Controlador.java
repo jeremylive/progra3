@@ -36,27 +36,39 @@ public class Controlador {
 
     //funciones
     
+    public void ejeActualizar(interfazCrudAficionado crudA, boolean indicadorFoto,
+                boolean indicadorCorreo)
+    {
+        //Valido los JcheckBox que si estan en true se habilita las casillas sino se desabilita
+        if(indicadorFoto==true)
+        {
+            crudA.fotoAficionado.setEnabled(true);
+        }else {
+            crudA.fotoAficionado.setEnabled(false);
+        }
+        
+        if(indicadorCorreo==true)
+        {
+            crudA.correoAficionado.setEnabled(true);
+        }else{
+            crudA.correoAficionado.setEnabled(false);
+        }
+        
+        //
+        
+        
+        
+        
+    }
     
     //CRUD AFICIONADO
     public void crearAficionado(String codAficionado, String contraseñaAficionado, 
                 String fotoAficionado, String correoAficionado, boolean indicadorFoto,
                 boolean indicadorCorreo)
     {
+        
         //Validaciones 
-        if(indicadorFoto==true)
-        {
-            
-        }
-        
-        //
-        if(indicadorCorreo==true)
-        {
-            
-        }
-        
-        //
-        
-        
+   
         
     }
     

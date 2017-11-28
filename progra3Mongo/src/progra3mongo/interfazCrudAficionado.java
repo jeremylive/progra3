@@ -273,7 +273,7 @@ public class interfazCrudAficionado extends javax.swing.JFrame
 
 
         //
-        control.ejeActualizar();
+        control.ejeActualizar(this, despliegueFoto.isSelected(), despliegueCorreo.isSelected());
 
     }//GEN-LAST:event_ACTUALIZARActionPerformed
 
@@ -282,12 +282,12 @@ public class interfazCrudAficionado extends javax.swing.JFrame
     private javax.swing.JTextField codAficionado;
     private javax.swing.JTextField codAficionadoEliminar;
     private javax.swing.JTextField contraseñaAficionado;
-    private javax.swing.JTextField correoAficionado;
+    public static javax.swing.JTextField correoAficionado;
     private javax.swing.JButton crearAficionado;
     public static javax.swing.JCheckBox despliegueCorreo;
     private javax.swing.JCheckBox despliegueFoto;
     private javax.swing.JButton eliminarAficionado;
-    private javax.swing.JTextField fotoAficionado;
+    public static javax.swing.JTextField fotoAficionado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
