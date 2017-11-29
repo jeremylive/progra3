@@ -22,28 +22,29 @@ public class interfazCrudResumen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        botonCrear = new javax.swing.JButton();
         numPartido = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtResumen = new javax.swing.JTextArea();
         video1 = new javax.swing.JTextField();
         video2 = new javax.swing.JTextField();
         numPartidoEliminar = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        botonEliminar = new javax.swing.JButton();
+        botonModificar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        botonSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("CREAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonCrear.setText("CREAR");
+        botonCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonCrearActionPerformed(evt);
             }
         });
 
@@ -51,17 +52,17 @@ public class interfazCrudResumen extends javax.swing.JFrame {
         txtResumen.setRows(5);
         jScrollPane1.setViewportView(txtResumen);
 
-        jButton2.setText("ELIMINAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botonEliminar.setText("ELIMINAR");
+        botonEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botonEliminarActionPerformed(evt);
             }
         });
 
-        jButton3.setText("MODIFICAR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        botonModificar.setText("MODIFICAR");
+        botonModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                botonModificarActionPerformed(evt);
             }
         });
 
@@ -75,49 +76,60 @@ public class interfazCrudResumen extends javax.swing.JFrame {
 
         jLabel5.setText("numero del partido");
 
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("CRUD RESUMEN");
+
+        botonSalir.setText("SALIR");
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)
-                        .addGap(136, 136, 136))
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(86, 86, 86)
+                                .addComponent(botonCrear)
+                                .addGap(78, 78, 78)
+                                .addComponent(botonModificar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonSalir))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jScrollPane1)
-                                .addComponent(video2)
-                                .addComponent(video1)
-                                .addComponent(numPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGap(194, 194, 194)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1)
+                            .addComponent(video2)
+                            .addComponent(video1)
+                            .addComponent(numPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addComponent(jLabel5)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addComponent(numPartidoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                    .addComponent(numPartidoEliminar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonEliminar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addGap(44, 44, 44)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(numPartido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(numPartidoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,7 +138,7 @@ public class interfazCrudResumen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2)
+                    .addComponent(botonEliminar)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -136,18 +148,19 @@ public class interfazCrudResumen extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(video2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3))
-                .addContainerGap(24, Short.MAX_VALUE))
+                    .addComponent(botonCrear)
+                    .addComponent(botonModificar)
+                    .addComponent(botonSalir))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     //Create resumen
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearActionPerformed
         //Validar que sea int o strings
         int numeroPartido;
         try {
@@ -182,8 +195,8 @@ public class interfazCrudResumen extends javax.swing.JFrame {
                     }
                 }
             }
-            
-            if(!valido) {
+
+            if (!valido) {
                 JOptionPane.showMessageDialog(null, "No puede registrar el resumen porque el partido aún no está en el sistema");
                 return;
             }
@@ -193,29 +206,55 @@ public class interfazCrudResumen extends javax.swing.JFrame {
         }
 
         //Creo un resumen
-        control.createResumen(numeroPartido, eq1, eq2, txtResumen.getText(), video1.getText(), video2.getText());
+        int estado = control.createResumen(numeroPartido, eq1, eq2, txtResumen.getText(), video1.getText(), video2.getText());
+        if (estado == 0) {
+            JOptionPane.showMessageDialog(null, "Resumen creado correctamente");
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al crear el resumen");
+        }
+    }//GEN-LAST:event_botonCrearActionPerformed
 
+    private void botonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarActionPerformed
+        //Valido que sea entero
+        try {
+            int numeroPartido = Integer.parseInt(numPartido.getText());
+            //Modifico el resumen
+            int estado = control.updateResumen(numeroPartido, txtResumen.getText(), video1.getText(), video2.getText());
+            if (estado == 0) {
+                JOptionPane.showMessageDialog(null, "Resumen modificado correctamente");
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al modificar el resumen");
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "El numero de partido debe ser entero");
+        }
+    }//GEN-LAST:event_botonModificarActionPerformed
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
+        //Valido que sea entero
+        try {
+            int numeroPartido = Integer.parseInt(numPartidoEliminar.getText());
+            //Elimino el resumen
+            int estado = control.deleteResumen(numeroPartido);
+            if (estado == 0) {
+                JOptionPane.showMessageDialog(null, "Resumen eliminado correctamente");
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al eliminar el resumen");
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "El numero de partido debe ser entero");
+        }
+    }//GEN-LAST:event_botonEliminarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-        //Modifico un resumen
-        control.updateResumen(Integer.parseInt(numPartido.getText()), txtResumen.getText(), video1.getText(), video2.getText());
-
-
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-        //Elimino un resumen
-        control.deleteResumen(Integer.parseInt(numPartidoEliminar.getText()));
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_botonSalirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton botonCrear;
+    private javax.swing.JButton botonEliminar;
+    private javax.swing.JButton botonModificar;
+    private javax.swing.JButton botonSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

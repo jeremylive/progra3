@@ -1,50 +1,52 @@
 package progra3mongo;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author live
  */
-public class interfaz01 extends javax.swing.JFrame 
-{
+public class interfaz01 extends javax.swing.JFrame {
+
     //Variables globales
     Controlador control;
-    
-    public interfaz01(Controlador control1) 
-    {
-        
+
+    public interfaz01(Controlador control1) {
+
         this.control = control1;
         initComponents();
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        botonCrudResumen = new javax.swing.JButton();
+        botonCrudAficionado = new javax.swing.JButton();
+        botonCrudComentario = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         ayuda = new javax.swing.JButton();
         salir = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        botonReadResumen = new javax.swing.JButton();
+        botonReadAficionado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("CRUD RESUMEN");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonCrudResumen.setText("CRUD RESUMEN");
+        botonCrudResumen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonCrudResumenActionPerformed(evt);
             }
         });
 
-        jButton2.setText("CRUD AFICIONADO");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botonCrudAficionado.setText("CRUD AFICIONADO");
+        botonCrudAficionado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botonCrudAficionadoActionPerformed(evt);
             }
         });
 
-        jButton3.setText("CRUD COMENTARIO");
+        botonCrudComentario.setText("CRUD COMENTARIO");
 
         jLabel6.setText("PROGRA 3 - BASE DE DATOS NOSQL: MONGODB");
 
@@ -57,17 +59,17 @@ public class interfaz01 extends javax.swing.JFrame
             }
         });
 
-        jButton4.setText("READ RESUMEN Y AFICIONADO");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        botonReadResumen.setText("READ RESUMEN CON COMENTARIOS");
+        botonReadResumen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                botonReadResumenActionPerformed(evt);
             }
         });
 
-        jButton5.setText("READ AFICIONADO");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        botonReadAficionado.setText("READ AFICIONADO");
+        botonReadAficionado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                botonReadAficionadoActionPerformed(evt);
             }
         });
 
@@ -83,15 +85,15 @@ public class interfaz01 extends javax.swing.JFrame
                         .addComponent(jLabel6))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botonReadResumen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(botonCrudResumen)
                                 .addGap(46, 46, 46)
-                                .addComponent(jButton3)))
+                                .addComponent(botonCrudComentario)))
                         .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(botonCrudAficionado, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonReadAficionado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(56, 56, 56))
             .addGroup(layout.createSequentialGroup()
                 .addGap(215, 215, 215)
@@ -107,13 +109,13 @@ public class interfaz01 extends javax.swing.JFrame
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(botonCrudComentario, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botonCrudResumen, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonCrudAficionado, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonReadResumen, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonReadAficionado, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ayuda, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,45 +126,42 @@ public class interfaz01 extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        interfazCrudResumen interfazResumen = new interfazCrudResumen(control);
-        interfazResumen.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    //Verifica que el usuario sea ADMINISTRADOR e inicia la interfaz de CRUD de Resumen
+    private void botonCrudResumenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrudResumenActionPerformed
+        if (!control.getAficionado().equals("ADMINISTRADOR")) {
+            JOptionPane.showMessageDialog(null, "Solo el usuario ADMINISTRADOR puede crear resumenes");
+        } else {
+            interfazCrudResumen interfazResumen = new interfazCrudResumen(control);
+            interfazResumen.setVisible(true);
+        }
+    }//GEN-LAST:event_botonCrudResumenActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         dispose();
     }//GEN-LAST:event_salirActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-
-        interfazReadResumenComentario interfaz12 = new interfazReadResumenComentario();
+    private void botonReadResumenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonReadResumenActionPerformed
+        interfazReadResumenComentario interfaz12 = new interfazReadResumenComentario(control);
         interfaz12.setVisible(true);
+    }//GEN-LAST:event_botonReadResumenActionPerformed
 
-
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-
-
+    private void botonReadAficionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonReadAficionadoActionPerformed
         interfazReadAficionados interfaz13 = new interfazReadAficionados();
         interfaz13.setVisible(true);
+    }//GEN-LAST:event_botonReadAficionadoActionPerformed
 
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+    private void botonCrudAficionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrudAficionadoActionPerformed
         interfazCrudAficionado interfazCrudA = new interfazCrudAficionado(control);
         interfazCrudA.setVisible(true);
-
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_botonCrudAficionadoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ayuda;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton botonCrudAficionado;
+    private javax.swing.JButton botonCrudComentario;
+    private javax.swing.JButton botonCrudResumen;
+    private javax.swing.JButton botonReadAficionado;
+    private javax.swing.JButton botonReadResumen;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
