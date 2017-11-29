@@ -9,6 +9,7 @@ public class interfazCrudAficionado extends javax.swing.JFrame
     //Variables globales
     Controlador control;
     
+    
     public interfazCrudAficionado(Controlador control1) 
     {
         

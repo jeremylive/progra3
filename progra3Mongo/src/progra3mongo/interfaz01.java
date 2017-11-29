@@ -152,7 +152,7 @@ public class interfaz01 extends javax.swing.JFrame {
     }//GEN-LAST:event_botonReadResumenActionPerformed
 
     private void botonReadAficionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonReadAficionadoActionPerformed
-        interfazReadAficionados interfaz13 = new interfazReadAficionados();
+        interfazReadAficionados interfaz13 = new interfazReadAficionados(control);
         interfaz13.setVisible(true);
     }//GEN-LAST:event_botonReadAficionadoActionPerformed
 

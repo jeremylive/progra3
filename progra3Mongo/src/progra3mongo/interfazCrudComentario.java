@@ -242,7 +242,7 @@ public class interfazCrudComentario extends javax.swing.JFrame
         String pFecha = año.getSelectedItem().toString()+"-"+mes.getSelectedItem().toString()+"-"+dia.getSelectedItem().toString();
         String pHora = hora.getSelectedItem().toString()+minutos.getSelectedItem().toString();
         //Creo un comentario
-        control.crearComentario(getCont(), txtComentario.getText(), codigoAficionado.getText(), pFecha,
+        control.crearComentario(txtComentario.getText(), codigoAficionado.getText(), pFecha,
                 pHora, comentPadre.getText());
         
         aumentoContador();

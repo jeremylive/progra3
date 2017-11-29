@@ -225,6 +225,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="numPar">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
@@ -232,8 +235,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="eq1">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="coment">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -241,6 +250,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="eq2">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -269,6 +281,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="numComent">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
@@ -276,6 +291,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="aficionadoHizoComent">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
@@ -288,6 +306,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="fechaComent">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
       <Properties>
@@ -295,6 +316,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="horaComent">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">
       <Properties>
@@ -302,6 +326,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="correoComent">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel13">
       <Properties>
@@ -360,6 +387,7 @@
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>

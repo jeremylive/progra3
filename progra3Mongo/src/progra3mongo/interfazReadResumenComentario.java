@@ -7,12 +7,13 @@ import java.util.ArrayList;
  *
  * @author live
  */
-public class interfazReadResumenComentario extends javax.swing.JFrame {
-
-    ArrayList<Integer> listaResumenes = new ArrayList<>();
-    int contador = -1;
-    Controlador control;
-    String urlVideo1, urlVideo2;
+public class interfazReadResumenComentario extends javax.swing.JFrame 
+{
+    //Variables globales
+    private ArrayList<Integer> listaResumenes = new ArrayList<>();  //lista de numeros de los resumen
+    private int contador = -1;                                      //cont
+    private Controlador control;                                    //controlador
+    private String urlVideo1, urlVideo2;                            //Videos urls
 
     public interfazReadResumenComentario(Controlador control) {
         this.control = control;
@@ -114,9 +115,17 @@ public class interfazReadResumenComentario extends javax.swing.JFrame {
 
         jLabel3.setText("Numero partido:");
 
+        numPar.setEnabled(false);
+
         jLabel4.setText("Equipo 1:");
 
+        eq1.setEnabled(false);
+
+        coment.setEnabled(false);
+
         jLabel5.setText("Equipo 2:");
+
+        eq2.setEnabled(false);
 
         jLabel6.setText("Video 1");
 
@@ -136,15 +145,25 @@ public class interfazReadResumenComentario extends javax.swing.JFrame {
             }
         });
 
+        numComent.setEnabled(false);
+
         jLabel8.setText("Numero de comentario");
+
+        aficionadoHizoComent.setEnabled(false);
 
         jLabel9.setText("Aficionado que hizo el comentario");
 
         jLabel10.setText("fecha");
 
+        fechaComent.setEnabled(false);
+
         jLabel11.setText("hora");
 
+        horaComent.setEnabled(false);
+
         jLabel12.setText("correo");
+
+        correoComent.setEnabled(false);
 
         jLabel13.setText("En caso de que los indicadores esten en true");
 
@@ -179,6 +198,7 @@ public class interfazReadResumenComentario extends javax.swing.JFrame {
 
         textoResumen.setColumns(20);
         textoResumen.setRows(5);
+        textoResumen.setEnabled(false);
         jScrollPane1.setViewportView(textoResumen);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
