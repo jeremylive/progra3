@@ -519,7 +519,7 @@ public class Controlador {
         DBCursor cursor = tablaAficionado.find();
         while (cursor.hasNext()) {
             DBObject tupla = cursor.next();
-            resultado.add(""+((int) tupla.get("codigo_aficionado")));
+            resultado.add((String) tupla.get("codigo_aficionado"));
         }
 
         return resultado;
@@ -556,7 +556,7 @@ public class Controlador {
     }
 
     //READ AFICIONADO
-    public DBObject readAficionado(int codAfi) {
+    public DBObject readAficionado(String codAfi) {
         DBObject resultado = null;
 
         //Creo el query

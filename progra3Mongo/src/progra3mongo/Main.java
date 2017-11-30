@@ -14,15 +14,14 @@ public class Main
         
         
         //Creo conexion ORACLE
-        //Conexion conex = new Conexion();
-        //conex.Conectar();
+        Conexion conex = new Conexion();
+        conex.Conectar();
         Progra3Mongo mongo = new Progra3Mongo();
         mongo.conexion();
         Controlador control = new Controlador(mongo);
         interfazLogin interfaz = new interfazLogin(control);
         
-        //if(conex.getstatus() && mongo.getStatus())
-        if(mongo.getStatus())
+        if(conex.getstatus() && mongo.getStatus())
         {
             //
             JOptionPane.showMessageDialog(null, "Conexion exitosa a MONGODB y ORACLE ");

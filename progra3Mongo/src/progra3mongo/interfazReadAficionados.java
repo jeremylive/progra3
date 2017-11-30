@@ -56,7 +56,7 @@ public class interfazReadAficionados extends javax.swing.JFrame
     
     
     //Variables globales
-    private ArrayList<String> listaAficionado = new ArrayList<>();  //lista de numeros de los resumen
+    private ArrayList<String> listaAficionado = new ArrayList<>();  //lista de codigos de los aficionados
     private int contador = -1;                                      //cont
     private Controlador control;                                    //controlador
     private String urlVideo1, urlVideo2;                            //Videos urls
@@ -85,9 +85,9 @@ public class interfazReadAficionados extends javax.swing.JFrame
     //CARGAR SIGUIENTE: Obtiene los datos del resumen en la lista de resumenes segun el contador
     public void cargarSiguiente() {
         //Verifica si existe por lo menos un resumen
-        if (listaAficionado.size() != 0) {
+        if (!listaAficionado.isEmpty()) {
             contador++;
-            DBObject tupla = control.readAficionado(Integer.parseInt(listaAficionado.get(contador)));
+            DBObject tupla = control.readAficionado(listaAficionado.get(contador));
             cargarReadAficionado((String) tupla.get("codigo_aficionado"),
                     (String) tupla.get("contraseña"),
                     (String) tupla.get("foto"),

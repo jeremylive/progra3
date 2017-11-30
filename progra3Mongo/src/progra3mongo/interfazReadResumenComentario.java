@@ -1,8 +1,17 @@
 package progra3mongo;
 
-import com.mongodb.DBObject;
+import com.mongodb.BasicDBObject;
+import com.mongodb.*;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import static sun.applet.AppletResourceLoader.getImage;
 
 /**
  *
@@ -10,6 +19,43 @@ import javax.swing.DefaultComboBoxModel;
  */
 public class interfazReadResumenComentario extends javax.swing.JFrame 
 {
+    public class Imagen extends javax.swing.JPanel 
+    {
+        String url;
+        
+        public Imagen(String url1) 
+        {
+            this.setSize(78, 78); //se selecciona el tamaño del panel
+            this.url = url1;
+        }
+
+        //Se crea un método cuyo parámetro debe ser un objeto Graphics
+
+        public void paint(Graphics grafico) 
+        {
+           
+            try {
+                 Dimension height = getSize();
+            
+                JLabel etiqueta = new JLabel();
+                Image img=getImage(new URL(url));
+                etiqueta.setIcon(new ImageIcon(img));
+                //repaint();
+                
+                grafico.drawImage(img, 0, 0, height.width, height.height, null);
+
+                setOpaque(false);
+                super.paintComponent(grafico);
+
+               } catch (MalformedURLException ex) {
+                // TODO Auto-generated catch block
+                ex.printStackTrace();
+               }
+            
+        }
+    }
+    
+    
     //Variables globales
     private ArrayList<Integer> listaResumenes = new ArrayList<>();  //lista de numeros de los resumen
     private ArrayList<Integer> listaComentarios = new ArrayList<>();//lista de numeros de los comentarios
@@ -35,21 +81,71 @@ public class interfazReadResumenComentario extends javax.swing.JFrame
     }
     
     //CARGAR READ COMENTARIO
-    public void cargarReadComentario(int numero, String fecha, String hora, String texto, String aficionado) {
-        numComent.setText("" + numero);
-        fechaComent.setText(fecha);
-        horaComent.setText(hora);
-        textoComent.setText(texto);
-        aficionadoHizoComent.setText(aficionado);
+    public void cargarReadComentario(DBObject tupla) {
+        numComent.setText("" + ((int) tupla.get("numero_comentario")));
+        fechaComent.setText((String) tupla.get("fecha"));
+        horaComent.setText((String) tupla.get("hora"));
+        textoComent.setText((String) tupla.get("texto"));
+        //obtiene el aficionado
+        DBObject tuplaAficionado = control.readAficionado((String) tupla.get("codigo_aficionado"));
+        String urlFoto = (String)tuplaAficionado.get("foto");
+        String indicFoto = (String)tuplaAficionado.get("indicador_foto");
+        String dirCorreo = (String)tuplaAficionado.get("correo");
+        String indicCorreo = (String)tuplaAficionado.get("indicador_correo");
+        String estadoBorrado = (String)tuplaAficionado.get("estado_borrado");
+        String fechaBorrado = (String)tuplaAficionado.get("fecha_borrado");
+        String horaBorrado = (String)tuplaAficionado.get("hora_borrado");
+        //Opcional : muestra correo
+        if(indicCorreo.equals("YES")) {
+            correoComent.setText(dirCorreo);
+        }
+        //Opcional : muestra foto
+        if(indicFoto.equals("YES")) {
+            Imagen Imagen = new Imagen(urlFoto);
+            fotoComent.add(Imagen);
+            fotoComent.repaint();
+        }
+        //Verifica borrado
+        if(estadoBorrado.equals("YES")) {
+            aficionadoHizoComent.setText("BORRADO "+fechaBorrado+" "+horaBorrado);
+        }
+        else {
+            aficionadoHizoComent.setText((String) tupla.get("codigo_aficionado"));
+        }
     }
     
     //CARGAR READ RESPUESTA
-    public void cargarReadRespuesta(int numero, String fecha, String hora, String texto, String aficionado) {
-        numResp.setText("" + numero);
-        fechaResp.setText(fecha);
-        horaResp.setText(hora);
-        textoResp.setText(texto);
-        aficionadoResp.setText(aficionado);
+    public void cargarReadRespuesta(DBObject tupla) {
+        numResp.setText("" + ((int) tupla.get("numero_comentario")));
+        fechaResp.setText((String) tupla.get("fecha"));
+        horaResp.setText((String) tupla.get("hora"));
+        textoResp.setText((String) tupla.get("texto"));
+        //obtiene el aficionado
+        DBObject tuplaAficionado = control.readAficionado((String) tupla.get("codigo_aficionado"));
+        String urlFoto = (String)tuplaAficionado.get("foto");
+        String indicFoto = (String)tuplaAficionado.get("indicador_foto");
+        String dirCorreo = (String)tuplaAficionado.get("correo");
+        String indicCorreo = (String)tuplaAficionado.get("indicador_correo");
+        String estadoBorrado = (String)tuplaAficionado.get("estado_borrado");
+        String fechaBorrado = (String)tuplaAficionado.get("fecha_borrado");
+        String horaBorrado = (String)tuplaAficionado.get("hora_borrado");
+        //Opcional : muestra correo
+        if(indicCorreo.equals("YES")) {
+            correoResp.setText(dirCorreo);
+        }
+        //Opcional : muestra foto
+        if(indicFoto.equals("YES")) {
+            Imagen Imagen = new Imagen(urlFoto);
+            fotoResp.add(Imagen);
+            fotoResp.repaint();
+        }
+        //Verifica borrado
+        if(estadoBorrado.equals("YES")) {
+            aficionadoResp.setText("BORRADO "+fechaBorrado+" "+horaBorrado);
+        }
+        else {
+            aficionadoResp.setText((String) tupla.get("codigo_aficionado"));
+        }
     }
 
     //CARGAR SIGUIENTE RESUMEN: Obtiene los datos del resumen en la lista de resumenes segun el contador
@@ -76,11 +172,7 @@ public class interfazReadResumenComentario extends javax.swing.JFrame
         if (!listaComentarios.isEmpty()) {
             contadorComent++;
             DBObject tupla = control.readComentario(listaComentarios.get(contadorComent));
-            cargarReadComentario((int) tupla.get("numero_comentario"),
-                    (String) tupla.get("fecha"),
-                    (String) tupla.get("hora"),
-                    (String) tupla.get("texto"),
-                    (String) tupla.get("codigo_aficionado"));
+            cargarReadComentario(tupla);
             //Si llega al ultimo resumen reinicia el contador
             if (contadorComent == listaComentarios.size() - 1) {
                 contadorComent = -1;
@@ -94,11 +186,7 @@ public class interfazReadResumenComentario extends javax.swing.JFrame
         if (!listaRespuestas.isEmpty()) {
             contadorResp++;
             DBObject tupla = control.readComentario(listaRespuestas.get(contadorResp));
-            cargarReadRespuesta((int) tupla.get("numero_comentario"),
-                    (String) tupla.get("fecha"),
-                    (String) tupla.get("hora"),
-                    (String) tupla.get("texto"),
-                    (String) tupla.get("codigo_aficionado"));
+            cargarReadRespuesta(tupla);
             //Si llega al ultimo resumen reinicia el contador
             if (contadorResp == listaRespuestas.size() - 1) {
                 contadorResp = -1;
@@ -223,11 +311,11 @@ public class interfazReadResumenComentario extends javax.swing.JFrame
         fotoComent.setLayout(fotoComentLayout);
         fotoComentLayout.setHorizontalGroup(
             fotoComentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 73, Short.MAX_VALUE)
+            .addGap(0, 78, Short.MAX_VALUE)
         );
         fotoComentLayout.setVerticalGroup(
             fotoComentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 62, Short.MAX_VALUE)
+            .addGap(0, 78, Short.MAX_VALUE)
         );
 
         salir.setText("SALIR");
@@ -321,15 +409,17 @@ public class interfazReadResumenComentario extends javax.swing.JFrame
 
         jLabel22.setText("Foto:");
 
+        fotoResp.setPreferredSize(new java.awt.Dimension(78, 78));
+
         javax.swing.GroupLayout fotoRespLayout = new javax.swing.GroupLayout(fotoResp);
         fotoResp.setLayout(fotoRespLayout);
         fotoRespLayout.setHorizontalGroup(
             fotoRespLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 73, Short.MAX_VALUE)
+            .addGap(0, 78, Short.MAX_VALUE)
         );
         fotoRespLayout.setVerticalGroup(
             fotoRespLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 62, Short.MAX_VALUE)
+            .addGap(0, 78, Short.MAX_VALUE)
         );
 
         botonCrearComent.setText("CREAR COMENTARIO");
@@ -418,7 +508,7 @@ public class interfazReadResumenComentario extends javax.swing.JFrame
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(1, 1, 1)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                     .addGroup(layout.createSequentialGroup()
                                                         .addComponent(jLabel14)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -492,7 +582,7 @@ public class interfazReadResumenComentario extends javax.swing.JFrame
                             .addComponent(botonCrearComent, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -558,7 +648,7 @@ public class interfazReadResumenComentario extends javax.swing.JFrame
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14)
                             .addComponent(fotoComent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(55, 55, 55)
+                        .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel20)
                             .addComponent(horaResp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
