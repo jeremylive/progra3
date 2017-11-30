@@ -30,7 +30,7 @@ public class MuestraVideo extends javax.swing.JFrame
         initComponents();
         
         chooser();
-        System.out.println("--"+getFile());
+        System.out.println(getFile());
         createScene();
         
         setVisible(true);
@@ -45,6 +45,11 @@ public class MuestraVideo extends javax.swing.JFrame
 
     }
 
+    public JFXPanel getFX()
+    {
+        return this.jfxPanel;
+    }
+    
     public File getFile()
     {
         return this.file;
@@ -70,26 +75,28 @@ public class MuestraVideo extends javax.swing.JFrame
         } 
     }
     
-    public void createScene()
+    private void createScene()
     {
         Platform.runLater(new Runnable() 
         {
-             @Override
-             public void run() 
-             {                 
-                //Logica selecciono donde se encuentra el video 
-                File file1 = getFile();
-                 
-                MediaPlayer oracleVid = new MediaPlayer(                                       
-                    new Media(file1.toURI().toString())
-                );
-                //se añade video al jfxPanel
-                jfxPanel.setScene(new Scene(new Group(new MediaView(oracleVid))));                    
-                oracleVid.setVolume(0.7);//volumen
-                oracleVid.setCycleCount(MediaPlayer.INDEFINITE);//repite video
-                oracleVid.play();//play video
-                 System.out.println("termina el thread");
-             }
+            @Override
+            public void run() 
+            {                 
+               //Logica selecciono donde se encuentra el video 
+               File file1 = new File("C:\\Users\\Usuario1\\Videos\\Progras.mp4");
+
+               MediaPlayer oracleVid = new MediaPlayer(                                       
+                   new Media(file1.toURI().toString())
+               );
+               //se añade video al jfxPanel
+               
+               getFX().setScene(new Scene(new Group(new MediaView(oracleVid))));                    
+               
+               oracleVid.setVolume(0.7);//volumen
+               oracleVid.setCycleCount(MediaPlayer.INDEFINITE);//repite video
+               oracleVid.play();//play video
+                System.out.println("termina el thread");
+            }
         });
     }
     
