@@ -36,10 +36,10 @@ public class interfazLogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         textoCodAficionado = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        textoPassAficionado = new javax.swing.JTextField();
         botonContinuar = new javax.swing.JButton();
         botonCrearNuevo = new javax.swing.JButton();
         botonSalir = new javax.swing.JButton();
+        textoPassAficionado = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,12 +81,12 @@ public class interfazLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(44, 44, 44)
                         .addComponent(textoCodAficionado, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(textoPassAficionado, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(textoPassAficionado)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -123,7 +123,9 @@ public class interfazLogin extends javax.swing.JFrame {
 
     private void botonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonContinuarActionPerformed
         boolean existe;
-        existe = control.verificarAficionado(textoCodAficionado.getText(),textoPassAficionado.getText());
+        char[] contra0 = textoPassAficionado.getPassword();
+        String contra = new String(contra0);
+        existe = control.verificarAficionado(textoCodAficionado.getText(),contra);
         if(existe) {
             JOptionPane.showMessageDialog(null, "Iniciada sesion correctamente");
             control.setAficionado(textoCodAficionado.getText());
@@ -152,6 +154,6 @@ public class interfazLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField textoCodAficionado;
-    private javax.swing.JTextField textoPassAficionado;
+    private javax.swing.JPasswordField textoPassAficionado;
     // End of variables declaration//GEN-END:variables
 }
