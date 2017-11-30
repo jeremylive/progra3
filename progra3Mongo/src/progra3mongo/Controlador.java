@@ -4,10 +4,14 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
+import java.awt.Desktop;
+import java.net.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -377,11 +381,9 @@ public class Controlador {
             return 1;
         }
     }*/
-    
     //
     //  CRUD RESUMEN
     //
-    
     //CREATE RESUMEN: Crea un nuevo resumen
     public int createResumen(int numero_partido, String codEq1, String codEq2,
             String txtResumen, String videos) {
@@ -539,7 +541,7 @@ public class Controlador {
 
         return resultado;
     }
-    
+
     //READ COMENTARIO
     public DBObject readComentario(int numeroComentario) {
         DBObject resultado = null;
@@ -570,4 +572,24 @@ public class Controlador {
         return resultado;
     }
 
+    //ABRIR VIDEO EN EXPLORADOR
+    private void openWebpage(URI uri) {
+        Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+        if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+            try {
+                desktop.browse(uri);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void openWebpage(String direccion) {
+        try {
+            URL link = new URL(direccion);
+            openWebpage(link.toURI());
+        } catch (MalformedURLException | URISyntaxException ex) {
+            ex.printStackTrace();
+        }
+    }
 }

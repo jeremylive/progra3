@@ -1,5 +1,8 @@
 package progra3mongo;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 
 /**
@@ -154,10 +157,14 @@ public class interfaz01 extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrudAficionadoActionPerformed
 
     private void ayudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaActionPerformed
-        // TODO add your handling code here:
-        
-        MuestraVideo video = new MuestraVideo();
-        
+        if (Desktop.isDesktopSupported()) {
+            try {
+                File myFile = new File("manual_de_usuario_resumen_de_los_partidos.pdf");
+                Desktop.getDesktop().open(myFile);
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(this, "Error al abrir el Manual de usuario");
+            }
+        }
     }//GEN-LAST:event_ayudaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

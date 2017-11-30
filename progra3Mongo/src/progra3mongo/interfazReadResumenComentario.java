@@ -676,7 +676,9 @@ public class interfazReadResumenComentario extends javax.swing.JFrame
     }//GEN-LAST:event_CargarActionPerformed
 
     private void botonPlayVideoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPlayVideoActionPerformed
-        // agregar codigo cargar video en (String) listaVideos.getSelectedItem()
+        String direccion = (String) listaVideos.getSelectedItem();
+        control.openWebpage(direccion);
+        
     }//GEN-LAST:event_botonPlayVideoActionPerformed
 
     private void botonCrearComentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearComentActionPerformed
