@@ -29,18 +29,38 @@ public class MuestraVideo extends javax.swing.JFrame
         
         initComponents();
         
-        chooser();
-        System.out.println(getFile());
-        createScene();
+        //chooser();
+        //System.out.println(getFile());
+        //createScene();
         
+        this.setLayout(new BorderLayout());
+        jfxPanel = new JFXPanel();
+        this.add(jfxPanel, BorderLayout.CENTER);
+        
+        
+        ThreadVideo video = new ThreadVideo();
+        new Thread(video).start();
+        
+        this.setTitle("Java Swing Video con FX");
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+        
+        //Añadimos el panel de JavaFX al JPanel Swing
+        this.setLayout(new BorderLayout());
+        this.add(jfxPanel,BorderLayout.CENTER);
+        
+        //jfxPanel.setVisible(true);
+        //this.setVisible(true);
+        
+        /*
         setVisible(true);
         setTitle("Java Swing Video con FX");
         setResizable(false);
         setLocationRelativeTo(null);
-        
+        */
         //Añadimos el panel de JavaFX al JPanel Swing
-        video.setLayout(new BorderLayout());
-        video.add(jfxPanel,BorderLayout.CENTER);
+        //video.setLayout(new BorderLayout());
+        //video.add(jfxPanel,BorderLayout.CENTER);
 
 
     }
@@ -74,7 +94,7 @@ public class MuestraVideo extends javax.swing.JFrame
             JOptionPane.showMessageDialog(null, "Nombre de archivo inválido");
         } 
     }
-    
+    /*
     private void createScene()
     {
         Platform.runLater(new Runnable() 
@@ -99,42 +119,28 @@ public class MuestraVideo extends javax.swing.JFrame
             }
         });
     }
-    
+    */
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        video = new javax.swing.JPanel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout videoLayout = new javax.swing.GroupLayout(video);
-        video.setLayout(videoLayout);
-        videoLayout.setHorizontalGroup(
-            videoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        videoLayout.setVerticalGroup(
-            videoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(video, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(video, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JPanel video;
     // End of variables declaration//GEN-END:variables
 }
