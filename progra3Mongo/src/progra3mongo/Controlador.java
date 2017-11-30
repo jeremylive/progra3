@@ -181,14 +181,14 @@ public class Controlador {
         //Indicador foto o correo son true o false
         //Creo el query, con la condicion
         //SELECT * FROM AFICIONADO WHERE NUMERO_AFICIONADO = ""
-        BasicDBObject query = new BasicDBObject("numero_aficionado", codAficionado);
+        BasicDBObject query = new BasicDBObject("codigo_aficionado", codAficionado);
         DBObject tuplaExistente;
         //Valido si existe el numero de aficionado en la tabla SI o NO
         DBCursor cursorExistente = tablaAficionado.find(query);
         if (cursorExistente.hasNext()) {
             tuplaExistente = cursorExistente.next();
         } else {
-            JOptionPane.showMessageDialog(null, "No existe un resumen con ese numero de partido");
+            JOptionPane.showMessageDialog(null, "No existe un aficionado con ese codigo");
             return 1;
         }
         //Valido que el aficionado no este borrado
@@ -512,14 +512,14 @@ public class Controlador {
     }
 
     //OBTENER AFICIONADOS
-    public ArrayList<Integer> obtenerAficionados() {
-        ArrayList<Integer> resultado = new ArrayList<>();
+    public ArrayList<String> obtenerAficionados() {
+        ArrayList<String> resultado = new ArrayList<>();
 
         //Obtengo todas las tuplas
         DBCursor cursor = tablaAficionado.find();
         while (cursor.hasNext()) {
             DBObject tupla = cursor.next();
-            resultado.add((int) tupla.get("codigo_aficionado"));
+            resultado.add(""+((int) tupla.get("codigo_aficionado")));
         }
 
         return resultado;
