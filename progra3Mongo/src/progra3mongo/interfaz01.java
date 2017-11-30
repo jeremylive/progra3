@@ -56,6 +56,11 @@ public class interfaz01 extends javax.swing.JFrame {
         jLabel6.setText("PROGRA 3 - BASE DE DATOS NOSQL: MONGODB");
 
         ayuda.setText("AYUDA");
+        ayuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ayudaActionPerformed(evt);
+            }
+        });
 
         salir.setText("SALIR");
         salir.addActionListener(new java.awt.event.ActionListener() {
@@ -166,6 +171,12 @@ public class interfaz01 extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_botonCrudComentarioActionPerformed
+
+    private void ayudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaActionPerformed
+        
+        MuestraVideo video = new MuestraVideo();
+        
+    }//GEN-LAST:event_ayudaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ayuda;
