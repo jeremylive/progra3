@@ -33,13 +33,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="botonReadResumen" min="-2" pref="292" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="botonCrudResumen" min="-2" pref="125" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="botonCrudComentario" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="botonCrudResumen" min="-2" pref="125" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="botonReadAficionado" pref="193" max="32767" attributes="0"/>
                           <Component id="botonCrudAficionado" max="32767" attributes="0"/>
@@ -64,10 +60,7 @@
               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                      <Component id="botonCrudComentario" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
-                      <Component id="botonCrudResumen" alignment="3" min="-2" pref="69" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="botonCrudResumen" alignment="1" min="-2" pref="69" max="-2" attributes="0"/>
                   <Component id="botonCrudAficionado" alignment="1" min="-2" pref="69" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -102,14 +95,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCrudAficionadoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="botonCrudComentario">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="CRUD COMENTARIO"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCrudComentarioActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
         <Property name="text" type="java.lang.String" value="PROGRA 3 - BASE DE DATOS NOSQL: MONGODB"/>
@@ -119,9 +104,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="AYUDA"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ayudaActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="salir">
       <Properties>

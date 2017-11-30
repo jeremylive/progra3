@@ -23,7 +23,6 @@ public class interfaz01 extends javax.swing.JFrame {
 
         botonCrudResumen = new javax.swing.JButton();
         botonCrudAficionado = new javax.swing.JButton();
-        botonCrudComentario = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         ayuda = new javax.swing.JButton();
         salir = new javax.swing.JButton();
@@ -46,21 +45,9 @@ public class interfaz01 extends javax.swing.JFrame {
             }
         });
 
-        botonCrudComentario.setText("CRUD COMENTARIO");
-        botonCrudComentario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCrudComentarioActionPerformed(evt);
-            }
-        });
-
         jLabel6.setText("PROGRA 3 - BASE DE DATOS NOSQL: MONGODB");
 
         ayuda.setText("AYUDA");
-        ayuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ayudaActionPerformed(evt);
-            }
-        });
 
         salir.setText("SALIR");
         salir.addActionListener(new java.awt.event.ActionListener() {
@@ -96,11 +83,8 @@ public class interfaz01 extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(botonReadResumen, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(botonCrudResumen, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(34, 34, 34)
-                                .addComponent(botonCrudComentario)))
-                        .addGap(42, 42, 42)
+                            .addComponent(botonCrudResumen, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(56, 56, 56)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(botonReadAficionado, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
                             .addComponent(botonCrudAficionado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -119,9 +103,7 @@ public class interfaz01 extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(botonCrudComentario, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(botonCrudResumen, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonCrudResumen, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonCrudAficionado, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -166,22 +148,9 @@ public class interfaz01 extends javax.swing.JFrame {
         interfazCrudA.setVisible(true);
     }//GEN-LAST:event_botonCrudAficionadoActionPerformed
 
-    private void botonCrudComentarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrudComentarioActionPerformed
-        
-        
-        
-    }//GEN-LAST:event_botonCrudComentarioActionPerformed
-
-    private void ayudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaActionPerformed
-        
-        MuestraVideo video = new MuestraVideo();
-        
-    }//GEN-LAST:event_ayudaActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ayuda;
     private javax.swing.JButton botonCrudAficionado;
-    private javax.swing.JButton botonCrudComentario;
     private javax.swing.JButton botonCrudResumen;
     private javax.swing.JButton botonReadAficionado;
     private javax.swing.JButton botonReadResumen;

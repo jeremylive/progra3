@@ -4,30 +4,24 @@ package progra3mongo;
  *
  * @author live
  */
-public class interfazCrudAficionado extends javax.swing.JFrame 
-{
+public class interfazCrudAficionado extends javax.swing.JFrame {
+
     //Variables globales
     Controlador control;
-    
-    
-    public interfazCrudAficionado(Controlador control1) 
-    {
-        
+
+    public interfazCrudAficionado(Controlador control1) {
         this.control = control1;
         initComponents();
     }
-    
-    
-    public void setfotoAfi(boolean pFoto)
-    {
+
+    public void setfotoAfi(boolean pFoto) {
         fotoAficionado.setEnabled(pFoto);
     }
 
-    public void setcorreoAfi(boolean pCorreo)
-    {
+    public void setcorreoAfi(boolean pCorreo) {
         correoAficionado.setEnabled(pCorreo);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -111,12 +105,6 @@ public class interfazCrudAficionado extends javax.swing.JFrame
         ACTUALIZAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ACTUALIZARActionPerformed(evt);
-            }
-        });
-
-        contraseñaAficionado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contraseñaAficionadoActionPerformed(evt);
             }
         });
 
@@ -217,8 +205,7 @@ public class interfazCrudAficionado extends javax.swing.JFrame
                                 .addComponent(jLabel7))
                             .addComponent(despliegueCorreo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ACTUALIZAR, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(5, 5, 5))
+                        .addComponent(ACTUALIZAR, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -242,33 +229,26 @@ public class interfazCrudAficionado extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void crearAficionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearAficionadoActionPerformed
-
-        
         char[] contra0 = contraseñaAficionado.getPassword();
-        String contra = new String(contra0);  
-        
+        String contra = new String(contra0);
+
         //Creo un aficionado
-        control.crearAficionado(codAficionado.getText(), contra, 
+        control.crearAficionado(codAficionado.getText(), contra,
                 fotoAficionado.getText(), correoAficionado.getText(), despliegueFoto.isSelected(),
                 despliegueCorreo.isSelected());
-       
     }//GEN-LAST:event_crearAficionadoActionPerformed
 
     private void modificarAficionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarAficionadoActionPerformed
-
         char[] contra0 = contraseñaAficionado.getPassword();
-        String contra = new String(contra0);  
+        String contra = new String(contra0);
         
         //Modifico un aficionado
-        control.updateAficionado(codAficionado.getText(), contra, 
-                fotoAficionado.getText(), correoAficionado.getText(), despliegueFoto.getText(),
-                despliegueCorreo.getText());
-        
+        control.updateAficionado(codAficionado.getText(), contra,
+                fotoAficionado.getText(), correoAficionado.getText(), despliegueFoto.isSelected(),
+                despliegueCorreo.isSelected(), "NO", "", "");
     }//GEN-LAST:event_modificarAficionadoActionPerformed
 
     private void eliminarAficionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarAficionadoActionPerformed
-
-
         //Elimino un aficionado
         control.eliminarAficionado(codAficionadoEliminar.getText());
 
@@ -279,16 +259,10 @@ public class interfazCrudAficionado extends javax.swing.JFrame
     }//GEN-LAST:event_salirActionPerformed
 
     private void ACTUALIZARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACTUALIZARActionPerformed
-
-
         //
         control.ejeActualizar(this, despliegueFoto.isSelected(), despliegueCorreo.isSelected());
 
     }//GEN-LAST:event_ACTUALIZARActionPerformed
-
-    private void contraseñaAficionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseñaAficionadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_contraseñaAficionadoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ACTUALIZAR;
